@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fruit Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .form_heading {
+            background: pink;
+            color: white;
+            /* padding: 1px;
+        font-size: 2em; */
+            text-align: center
+        }
+        
+        img {
+            /* float:right; */
+            padding: 10px;
+            padding-left: 150px;
+        }
+        
+        fieldset {
+            border: 3px groove green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="row form_heading">
+            <h1>Form Validation Example</h1>
+        </div>
+        <div class="row">
+            <form onSubmit="saveLocalstore()">
+                <fieldset>
+                    <legend>Your Face:</legend>
+                    Your Image: <input type="file"><br> Image Preview: <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdDEJ4bbOmRUwLJzxmHF8uT-
+              
+              dPc1qsaWVZNdxMBnc7zeK3bTwCdw" alt="your image not found" height="100" width="100" />
+
+                </fieldset>
+                <fieldset>
+                    <legend>Your General Details:</legend>
+                    Name: <input type="text" pattern="[A-Za-z]{30}" maxLength="30" required id="name" /> Gender: <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female">Female</br>
+                    Age:<input type="number" min="18" max="40"><br> Date of birth:<input type="date"><br> Favorite Color:<input type="color"><br> Country:
+                    <select>
+                    <option value="Austria">Austria</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="India">India</option>
+                    <option value="Netherland">Netherland</option>
+                    <option value="Romania">Romania</option>
+                    </select><br/>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Your Indicators:</legend>
+                    Height: Short<input type="range" min="0" value="1" max="2" step="1">Tall<br> Salary: Poor<input type="range" min="0" value="3" max="5" step="1">Rich<br>
+                </fieldset>
+                <fieldset>
+                    <legend>Your Contact Info:</legend>
+                    Email: <input type="email" required id="email" />
+                    <br> Mobile: <input type="tel" required><br> Address: <textarea rows="5" cols="50"></textarea><br> Method To Contact You:<input type="radio" name="contact" value="email"> Email
+                    <input type="radio" name="contact" value="whatsApp">Whats App<input type="radio" name="contact" value="inApp"> In-app Call
+                </fieldset>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function saveLocalstore() {
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem("name", document.getElementById('name').value());
+                localStorage.setItem("email", document.getElementById('email').value());
+            }
+        }
+    </script>
+</body>
+
+</html>
